@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PIN"
+        android:theme="@style/Theme.SQLite"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
@@ -20,6 +20,18 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".DiarioPINActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".DiarioPINFormularioActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".DiarioPINDetalleActivity"
+            android:exported="true">
         </activity>
     </application>
 
