@@ -1,5 +1,6 @@
 package com.example.pin
 
+import Nota
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor

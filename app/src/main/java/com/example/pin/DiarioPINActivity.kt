@@ -1,5 +1,6 @@
 package com.example.pin
 
+import Nota
 import android.annotation.SuppressLint
 
 
@@ -43,10 +44,10 @@ class DiarioPINActivity : AppCompatActivity() {
         // Insertamos datos de prueba
         if (INSERTAR_DATOS_PRUEBA) {
             mDb.deleteAll()
-            for (i in 0..5) {
+            for (i in 0..3) {
                 mDb.insert(Nota(-1,
-                    "Nota de prueba " + String.format("%03d", i),
-                    "Descripción de la nota " + String.format("%03d", i)))
+                    "Nota de Amor para Laura número " + String.format("%01d", i),
+                    "Descripción de la nota para Laura"))
             }
         }
 

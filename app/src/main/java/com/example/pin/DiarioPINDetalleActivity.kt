@@ -3,6 +3,7 @@ package com.example.pin
 
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -19,6 +20,8 @@ class DiarioPINDetalleActivity : AppCompatActivity() {
 
     private lateinit var mDb: DataHelper
     private var mId: Long = -1
+
+    private var mediaPlayer: MediaPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,10 +80,15 @@ class DiarioPINDetalleActivity : AppCompatActivity() {
             .setMessage("¿Desea eliminar esta nota?")
             .setPositiveButton("Aceptar") { _, _ ->
                 val result: Int = mDb.deleteById(mId)
-                if (result > 0)
+                mediaPlayer = MediaPlayer.create(this, R.raw.audio)
+                mediaPlayer?.start()
+                if (result > 0){
+
                     returnResult("La nota se ha eliminado", RESULT_OK)
-                else
+
+                }else{
                     Toast.makeText(this, "Error al eliminar la nota", Toast.LENGTH_SHORT).show()
+                }
             }
             .setNegativeButton("Cancelar", null)
             .show()
